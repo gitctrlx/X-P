@@ -2,7 +2,7 @@
 
 ## 概述
 
-这是用来快速配置环境的bash/shell脚本。
+这是用来在服务器端快速配置环境的bash/shell脚本。
 
 
 
@@ -11,13 +11,7 @@
 **1.克隆本仓库**
 
 ```sh
-git clone https://github.com/1438802682/X.git
-```
-
-使用token克隆，或者上传密钥：
-
-```sh
-git clone https://[Token]@github.com/1438802682/X.git
+git clone https://github.com/1438802682/X-P.git
 ```
 
 **2.运行`i.sh`进行初始化操作**
