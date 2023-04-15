@@ -129,8 +129,6 @@ echo -e "\033[1;31m错误：不支持的操作系统类型。\033[0m"
 exit 1
 fi
 
-echo -e "\033[1;34m----------------------------------------\033[0m"
-
 
 # 启动 v2ray
 echo -e "\033[1;34m----------------------------------------\033[0m"
@@ -145,11 +143,10 @@ echo -e "\033[1;34m----------------------------------------\033[0m"
 echo -e "\033[1;32mv2ray 已在后台启动。\033[0m"
 echo ""
 echo -e "您可以使用以下命令查看日志信息："
-echo -e "    \033[1mtail -f $log_file\033[0m"
+echo -e "\033[1mtail -f $log_file\033[0m"
 echo ""
 echo -e "如需停止 v2ray 服务，请运行以下命令："
-echo -e " \033[1mkill $(cat $pid_file); rm $pid_file\033[0m"
-echo -e "\033[1;34m----------------------------------------\033[0m"
+echo -e "\033[1mkill $(cat $pid_file); rm $pid_file\033[0m"
 
 # 运行测试 v2ray 是否生效
 if pgrep -x "v2ray" > /dev/null; then
@@ -163,12 +160,11 @@ fi
 
 proxy_port="10809" # 替换为您的 v2ray 代理端口
 test_url="http://www.google.com" # 您可以选择一个可以通过代理访问的测试网址
-
+echo -e "\033[1;34m----------------------------------------\033[0m"
+echo -e "\033[1;32m正在测试 v2ray 代理服务...\033[0m"
 if curl -s -x "http://127.0.0.1:${proxy_port}" --connect-timeout 5 "$test_url" > /dev/null; then
-    echo -e "\033[1;34m----------------------------------------\033[0m"
     echo -e "\033[1;32mv2ray 代理已生效。\033[0m"
 else
-    echo -e "\033[1;34m----------------------------------------\033[0m"
     echo -e "\033[1;31m错误：v2ray 代理未生效。\033[0m"
     
     read -p "是否要关闭 v2ray 代理服务？[y/n]: " user_choice
