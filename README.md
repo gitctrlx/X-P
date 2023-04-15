@@ -9,7 +9,7 @@
 ## 安装
 
 ```
-git clone https://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@github.com/1438802682/X.git && cd X && bash _i.sh
+git clone https://demo@github.com/1438802682/X.git && cd X && bash _i.sh
 ```
 
 
